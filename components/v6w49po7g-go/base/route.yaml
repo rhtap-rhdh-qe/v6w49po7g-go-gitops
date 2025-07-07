@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: v6w49po7g-go
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: v6w49po7g-go 
+  name: v6w49po7g-go
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: v6w49po7g-go
+    weight: 100 
